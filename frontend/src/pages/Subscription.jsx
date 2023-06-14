@@ -1,6 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import "../css/Subsccription.css";
 const Subscription = () => {
+  const [year, setYear] = useState(false);
+  const [month, setMonnth] = useState(false);
+  const [three, setthree] = useState(false);
+  const [price, setPrice] = useState(0);
+  const yearly = () => {
+    setYear(true);
+    setMonnth(false);
+    setthree(false);
+    setPrice(329);
+  };
+  const theemonths = () => {
+    setYear(false);
+    setMonnth(false);
+    setthree(true);
+    setPrice(129);
+  };
+  const monthly = () => {
+    setYear(false);
+    setMonnth(true);
+    setthree(false);
+    setPrice(49);
+  };
+  console.log(year, month, three, price);
   return (
     <>
       <div className="container">
@@ -19,7 +42,11 @@ const Subscription = () => {
             </h2>
             <p style={{ color: "white" }}>Get the best music and pod casts</p>
             <div className="subscibemethods">
-              <div className="child">
+              <div
+                className="child"
+                onClick={yearly}
+                style={{ border: year ? "3px solid red" : "0px solid black" }}
+              >
                 <h4 style={{ color: "white" }}>
                   Yearly <br />{" "}
                   <span
@@ -30,8 +57,73 @@ const Subscription = () => {
                   ₹399 <br /> Save 60%
                 </h4>
               </div>
-              <div className="child"></div>
-              <div className="child"></div>
+              <div
+                className="child"
+                onClick={theemonths}
+                style={{ border: three ? "2px solid red" : "0px solid" }}
+              >
+                <h4 style={{ color: "white" }}>
+                  threemonths <br />{" "}
+                  <span
+                    style={{ color: "grey", textDecoration: " line-through" }}
+                  >
+                    ₹299
+                  </span>{" "}
+                  ₹129 <br /> Save 55%
+                </h4>
+              </div>
+              <div
+                className="child"
+                onClick={monthly}
+                style={{ border: month ? "3px solid red" : "0px solid black" }}
+              >
+                <h4 style={{ color: "white" }}>
+                  monthly <br />{" "}
+                  <span
+                    style={{ color: "grey", textDecoration: " line-through" }}
+                  >
+                    ₹99
+                  </span>{" "}
+                  ₹49 <br /> Save 50%
+                </h4>
+              </div>
+            </div>
+            <div style={{ color: "white" }}>
+              <ul>
+                <li>All amounts are inclusive of 18% GST</li>
+                <li>
+                  <p>
+                    By clicking on Continue button, you agree to Wynk’s Terms of
+                    service and Privacy policy.
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div
+              style={{
+                color: "white",
+                backgroundColor: "#292626",
+                display: "flex",
+                justifyContent: "space-between",
+                padding: "4px",
+              }}
+            >
+              <div>
+                Amount to be paid <br /> ₹{price}
+              </div>
+              <div>
+                <button
+                  style={{
+                    color: "white",
+                    backgroundColor: "teal",
+                    height: "30px",
+                    width: "100px",
+                    marginTop: "7px",
+                  }}
+                >
+                  Continue
+                </button>
+              </div>
             </div>
           </div>
         </div>
