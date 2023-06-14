@@ -1,0 +1,43 @@
+.container {
+    background-color: #070606;
+    padding: 20px;
+    height: auto;
+    width: 100%;
+   
+  }
+.first{
+    background-color: #292626;
+    padding: 20px;
+    height: 200px;
+    width: 100%;
+    border-bottom-left-radius: 15%;
+    border-bottom-right-radius: 15%;
+}
+.second{
+    background-color: #050505;
+    padding: 20px;
+    height: 500px;
+    width: 100%;
+}
+.modal{
+    background-color: #070606;
+    margin: auto;
+    height: 300px;
+    width: 50%;
+    border: 1px solid white;
+    margin-top: -150px;
+}
+.subscibemethods{
+    width: 90%;
+    height: 60%;
+    margin: auto;
+    display: flex;
+    border: 1px solid white;
+}
+.subscibemethods >.child{
+    width: 30%;
+    height: 90%;
+    margin: auto;
+    border: 1px solid white;
+    padding-top: 10px;
+}
