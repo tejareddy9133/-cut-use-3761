@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+
 import { HomePage } from "../pages/HomePage";
 import { LoginPage } from "../pages/LoginPage";
 import { SignUpPage } from "../pages/SignUpPage";
@@ -12,6 +13,7 @@ const Mainroutes = () => {
       <Route path="/signup" element={<SignUpPage/>} />
       <Route path="*" element={<h1>404 Page Not Found</h1>} />
     </Routes>
+
   );
 };
 
