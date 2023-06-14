@@ -1,17 +1,19 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Signup from "../pages/SignUpPage";
-import Login from "../pages/LoginPage";
+
+import { HomePage } from "../pages/HomePage";
+import { LoginPage } from "../pages/LoginPage";
+import { SignUpPage } from "../pages/SignUpPage";
 
 const Mainroutes = () => {
   return (
-    <div>
-      <Routes>
-        {/* <Route path="/" element={<Home />}></Route> */}
-        <Route path="/signup" element={<Signup />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/" element={<HomePage/>} />
+      <Route path="/login" element={<LoginPage/>} />
+      <Route path="/signup" element={<SignUpPage/>} />
+      <Route path="*" element={<h1>404 Page Not Found</h1>} />
+    </Routes>
+
   );
 };
 
