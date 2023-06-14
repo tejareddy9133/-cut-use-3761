@@ -10,6 +10,7 @@ function App() {
       <Navbar />
       <Mainroutes />
       {/* <Subscription /> */}
+     
     </div>
   );
 }
