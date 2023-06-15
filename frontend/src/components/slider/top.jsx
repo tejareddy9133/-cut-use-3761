@@ -1,39 +1,28 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-
-export default class Responsive extends Component {
+import "../slider/topSlider.css";
+export default class CenterMode extends Component {
   render() {
-    var settings = {
-      dots: true,
+    const settings = {
+      // dots: true,
+      className: "center",
+      centerMode: true,
       infinite: true,
-      speed: 500,
+      centerPadding: "60px",
       slidesToShow: 2,
-      slidesToScroll: 1,
-  
-      initialSlide: 0,
+      speed: 500,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      cssEase: "linear",
+      pauseOnHover: true,
       responsive: [
         {
           breakpoint: 1024,
           settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
+            slidesToShow: 1,
+            // slidesToScroll: 3,
             infinite: true,
             dots: true,
-          },
-        },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2,
-            initialSlide: 2,
-          },
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
           },
         },
       ],
@@ -41,54 +30,43 @@ export default class Responsive extends Component {
     return (
       <div>
         <Slider {...settings}>
-          <div>
+          <div className="pic-div" style={{ border: "12px solid black" }}>
             <img
-              src="https://img.wynk.in/unsafe/880x307/filters:no_upscale():strip_exif():format(webp)/https://s3.ap-south-1.amazonaws.com/discovery-prod-arsenal/arsenal/artworks/6483290f356b9b55a85dd0c9/BANNER_1557050805365.jpg"
-              alt="image"
+              src="https://img.wynk.in/unsafe/880x307/filters:no_upscale():strip_exif():format(webp)/https://s3.ap-south-1.amazonaws.com/discovery-prod-arsenal/arsenal/artworks/642a7743c141202c7398bab5/BANNER_185772945459139.png"
+              alt="pic 1"
             />
           </div>
-          <div>
+          <div className="pic-div">
             <img
-              src="https://img.wynk.in/unsafe/880x307/filters:no_upscale():strip_exif():format(webp)/https://s3.ap-south-1.amazonaws.com/discovery-prod-arsenal/arsenal/artworks/6483290f356b9b55a85dd0c9/BANNER_1557050805365.jpg"
-              alt="image"
+              src="https://img.wynk.in/unsafe/880x307/filters:no_upscale():strip_exif():format(webp)/https://s3.ap-south-1.amazonaws.com/discovery-prod-arsenal/arsenal/artworks/62ea10032a0381149fd8269f/BANNER_2293207196033742.png"
+              alt="pic 2"
             />
           </div>
-          <div>
+          <div className="pic-div">
             <img
-              src="https://img.wynk.in/unsafe/880x307/filters:no_upscale():strip_exif():format(webp)/https://s3.ap-south-1.amazonaws.com/discovery-prod-arsenal/arsenal/artworks/6483290f356b9b55a85dd0c9/BANNER_1557050805365.jpg"
-              alt="image"
+              src="https://img.wynk.in/unsafe/880x307/filters:no_upscale():strip_exif():format(webp)/https://s3.ap-south-1.amazonaws.com/discovery-prod-arsenal/arsenal/artworks/64842e1a469bf95b655abad1/BANNER_264828214749611.jpg"
+              alt="pic 3"
             />
           </div>
-          <div>
+          <div className="pic-div">
             <img
-              src="https://img.wynk.in/unsafe/880x307/filters:no_upscale():strip_exif():format(webp)/https://s3.ap-south-1.amazonaws.com/discovery-prod-arsenal/arsenal/artworks/6483290f356b9b55a85dd0c9/BANNER_1557050805365.jpg"
-              alt="image"
+              src="https://img.wynk.in/unsafe/880x307/filters:no_upscale():strip_exif():format(webp)/https://s3.ap-south-1.amazonaws.com/discovery-prod-arsenal/arsenal/artworks/648963788a902218088a186a/BANNER_316162730161978.jpeg"
+              alt="pic 3"
             />
           </div>
-          <div>
+          <div className="pic-div">
             <img
-              src="https://img.wynk.in/unsafe/880x307/filters:no_upscale():strip_exif():format(webp)/https://s3.ap-south-1.amazonaws.com/discovery-prod-arsenal/arsenal/artworks/6483290f356b9b55a85dd0c9/BANNER_1557050805365.jpg"
-              alt="image"
+              src="https://img.wynk.in/unsafe/880x307/filters:no_upscale():strip_exif():format(webp)/https://s3.ap-south-1.amazonaws.com/discovery-prod-arsenal/arsenal/artworks/6479d5e8514d861559829ecb/BANNER_15283274360980.jpg"
+              alt="pic 3"
             />
           </div>
-          <div>
+          <div className="pic-div">
             <img
-              src="https://img.wynk.in/unsafe/880x307/filters:no_upscale():strip_exif():format(webp)/https://s3.ap-south-1.amazonaws.com/discovery-prod-arsenal/arsenal/artworks/6483290f356b9b55a85dd0c9/BANNER_1557050805365.jpg"
-              alt="image"
+              src="https://img.wynk.in/unsafe/880x307/filters:no_upscale():strip_exif():format(webp)/https://s3.ap-south-1.amazonaws.com/discovery-prod-arsenal/arsenal/artworks/6479d5e8514d861559829ecb/BANNER_15283274360980.jpg"
+              alt="pic 3"
             />
           </div>
-          <div>
-            <img
-              src="https://img.wynk.in/unsafe/880x307/filters:no_upscale():strip_exif():format(webp)/https://s3.ap-south-1.amazonaws.com/discovery-prod-arsenal/arsenal/artworks/6483290f356b9b55a85dd0c9/BANNER_1557050805365.jpg"
-              alt="image"
-            />
-          </div>
-          <div>
-            <img
-              src="https://img.wynk.in/unsafe/880x307/filters:no_upscale():strip_exif():format(webp)/https://s3.ap-south-1.amazonaws.com/discovery-prod-arsenal/arsenal/artworks/6483290f356b9b55a85dd0c9/BANNER_1557050805365.jpg"
-              alt="image"
-            />
-          </div>
+          {/* Add more slide divs with pics */}
         </Slider>
       </div>
     );
