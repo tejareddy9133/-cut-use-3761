@@ -1,0 +1,10 @@
+.slider-item>img {
+  width: 209px;
+  height: 219px;
+  border-radius: 8px;width: 99%;
+}
+
+.slider-item {
+  width: 180px;
+  height: 265px;font-size: 16px;color: white;outline: none;padding: 2px;
+}

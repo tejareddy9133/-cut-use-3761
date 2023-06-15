@@ -98,3 +98,11 @@ body {
  li:hover {
   color: red;
 }
+.slide-container {
+  margin: 0 10px; /* Add desired gap between slides */
+}
+
+.slide-image {
+  width: 100%; /* Set the width of the image */
+  height: auto; /* Let the height adjust based on the aspect ratio */
+}
