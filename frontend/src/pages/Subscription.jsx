@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
+import useRazorpay from "react-razorpay";
 import "../css/Subsccription.css";
 const Subscription = () => {
   const [year, setYear] = useState(false);
   const [month, setMonnth] = useState(false);
   const [three, setthree] = useState(false);
-  const [price, setPrice] = useState(0);
+  const [price, setPrice] = useState(329);
   const yearly = () => {
     setYear(true);
     setMonnth(false);
@@ -24,6 +25,46 @@ const Subscription = () => {
     setPrice(49);
   };
   console.log(year, month, three, price);
+  const Razorpay = useRazorpay();
+  const params = {
+    price: parseFloat(price) * 100,
+    name: "teja",
+  };
+  const createOrder = (params) => {
+    // ...
+    return params;
+  };
+
+  const handlePayment = useCallback(async () => {
+    const order = await createOrder(params);
+    console.log(order);
+    const options = {
+      key: "rzp_test_Sd88VoR9NHci1p",
+      amount: order.price,
+      currency: "INR",
+      name: order.name,
+      description: "Test Transaction",
+      image: "https://example.com/your_logo",
+      order_id: order.id,
+      handler: (res) => {
+        console.log(res);
+      },
+      prefill: {
+        name: "Piyush Garg",
+        email: "youremail@example.com",
+        contact: "9999999999",
+      },
+      notes: {
+        address: "Razorpay Corporate Office",
+      },
+      theme: {
+        color: "#3399cc",
+      },
+    };
+
+    const rzpay = new Razorpay(options);
+    rzpay.open();
+  }, [Razorpay]);
   return (
     <>
       <div className="container">
@@ -120,6 +161,7 @@ const Subscription = () => {
                     width: "100px",
                     marginTop: "7px",
                   }}
+                  onClick={handlePayment}
                 >
                   Continue
                 </button>
