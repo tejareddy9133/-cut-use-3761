@@ -1,6 +1,4 @@
-* {
-  box-sizing: border-box;
-}
+
 
 body {
   margin: 0;
@@ -25,7 +23,8 @@ body {
 
 .nav > .nav-list {
   display: flex;
-  gap: 2rem;padding-right: %;
+  gap: 2rem;
+
   /* justify-content: space-around; */
 }
 
