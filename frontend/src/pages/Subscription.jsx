@@ -5,7 +5,7 @@ const Subscription = () => {
   const [year, setYear] = useState(false);
   const [month, setMonnth] = useState(false);
   const [three, setthree] = useState(false);
-  const [price, setPrice] = useState(329);
+  const [price, setPrice] = useState(100);
   const yearly = () => {
     setYear(true);
     setMonnth(false);
