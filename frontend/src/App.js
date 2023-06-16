@@ -4,15 +4,21 @@ import "slick-carousel/slick/slick-theme.css";
 
 import Navbar from "./components/Navbar";
 import Mainroutes from "./routes/Mainroutes";
-import { Music } from "./components/Music";
+
+
+import { Footer } from "./components/Footer";
+
 
 function App() {
   return (
     <div className="App">
-      {/* <Navbar /> */}
-      {/* <Music/> */}
 
-      <Mainroutes />
+    
+      <Mainroutes/>
+
+      <Footer/>
+
+      
     </div>
   );
 }
