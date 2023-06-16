@@ -34,7 +34,7 @@ const Navbarlinetwo = () => {
     }
     // console.log(authclass,"authclass")
     return (
-        <div>
+        <div >
 
             <div className={style}>
 
@@ -83,7 +83,7 @@ const Navbarlinetwo = () => {
 
                         </li>
                         <li className='borderwhite primeimagehover1'>
-                            <Link href="."> Top Albums <i class="fa fa-caret-down"></i> </Link>
+                            <Link href="."> Top Albums <i className="fa fa-caret-down"></i> </Link>
                             <div className='primeimage1'>
                                 <div>
                                     <a href="#">Top Hindi Albums</a>
@@ -108,7 +108,7 @@ const Navbarlinetwo = () => {
                             <Link href=".">  Top Artist</Link>
                         </li>
                         <li className='borderwhite primeimagehover1'>
-                            <Link href=".">Top Playlist  <i class="fa fa-caret-down"></i></Link>
+                            <Link href=".">Top Playlist  <i className="fa fa-caret-down"></i></Link>
                             <div className='primeimage1'>
                                 <div>
                                     <a href="#">Top 100 Songs</a>

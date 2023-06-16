@@ -12,10 +12,10 @@ img {
 
     padding: 2px 20px;
     /* overflow: hidden; */
-    background-color: black;
+    background-color:rgb(28,27,27);
     min-width: 100%;
     max-width: 100%;
-    background: #0e0e0e;
+    background:rgb(28,27,27);
 
 }
 
@@ -43,11 +43,12 @@ img {
     min-width: 260px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 100;
-    left: -100px;
+    left: -200px;
+   right: 5px;
 }
 
 .dropdown-content a {
-    color: rgb(253, 249, 249);
+    color: rgb(209, 28, 28);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -90,7 +91,7 @@ img {
     border: 0px solid red;
     height: 100%;
    width: auto;
-    background-color: black;
+    /* background-color:rgb(28,27,27); */
 
 }
 
@@ -102,7 +103,7 @@ img {
     align-items: center;
     width: auto;
     height: auto;
-    background-color: black;
+    /* background-color:rgb(28,27,27); */
 
 
 
@@ -113,11 +114,14 @@ img {
     position: relative;
     width: auto;
     height: 50px;
-    background: #0e0e0e;
+    /* background: rgb(28,27,27); */
     border-radius: 80px;
     transition: 0.5s;
     box-shadow: 0 0 0 2px #f6f2f2;
     overflow: hidden;
+    border: 0px solid rgb(215, 14, 14);
+    background:rgb(28,27,27);
+
 
 
 }
@@ -132,7 +136,7 @@ img {
     left: 0;
     width: 60px;
     height: 60px;
-    background: #141313;
+    background: rgb(28,27,27);
     border-radius: 60px;
     display: flex;
     justify-content: center;
@@ -168,6 +172,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 0px solid rgb(215, 14, 14);
 
 }
 
@@ -217,10 +222,10 @@ img {
 }
 
 .third {
-    border: 0px solid rgb(6, 15, 6);
+    border: 0px solid red;
     margin: 8px 2px;
     width: auto;
-    background-color: black;
+    background: rgb(28,27,27);
 
 }
 
@@ -228,7 +233,9 @@ img {
     border:0px solid rgb(34, 91, 215);
     margin: 8px 2px;
     width: auto;
-    background-color: black;
+    border: 0px solid rgb(215, 14, 14);
+    /* background-color:rgb(28,27,27); */
+    background: rgb(28,27,27);
 }
 
 .fifth {
@@ -239,7 +246,7 @@ img {
 
 
     border: 0px solid rgb(215, 14, 14);
-    background-color: black;
+    /* background-color:rgb(28,27,27); */
 
 }
 
@@ -257,7 +264,7 @@ img {
         width: auto;
         column-gap: 60px;
         padding: 0px 0px;
-        background-color: black;
+        background-color: rgb(28,27,27);
 
 
 

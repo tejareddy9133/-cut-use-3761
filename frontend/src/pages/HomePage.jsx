@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import "../css/homepage.css";
 
-
+import Header from "../components/Header";
+import Navbarlinetwo from "../components/Navbarlinetwo";
 import SimpleSlider from "../components/slider/top";
 import Responsive2 from "../components/slider/second";
 import { First } from "../components/slider/first";
@@ -11,8 +12,9 @@ export const HomePage = () => {
   }, []);
   return (
     <div>
-    <div><First/></div>
-      
+     <Header/>
+     <Navbarlinetwo/>
+    
       <div style={{ backgroundColor: "#0c0f12", color: "white" }}>
         <div className="slider-one">
           <SimpleSlider />

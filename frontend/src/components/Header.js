@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "../css/Header.css"
-import logo from "../image/logo.jpg";
+import logo from "../data/images/Navbar/logo.jpg";
 
 const Header = () => {
     const [style, setstyle] = useState("cont123");
@@ -15,12 +15,12 @@ const Header = () => {
         <div className='header'>
 
             <div style={{ display: 'flex', flexDirection: "row" }}>
-                <div style={{ display: 'flex', flexDirection: "row", columnGap: "4px" }} className='first'>
-                    <div style={{ border: "0px solid red",borderRadius:"30px"}}>
-                        <img style={{ width: "100px",borderRadius:"30px" }} src={logo} alt="logo" />
+                <div style={{ display: 'flex', flexDirection: "row", columnGap: "4px", border: "0px solid red", height: "auto", background:"rgb(28,27,27)" }} className='first'>
+                    <div style={{ border: "0px solid red", borderRadius: "20px" }}>
+                        <img style={{ width: "130px", borderRadius: "30px" }} src={logo} alt="logo" />
                     </div>
 
-                    <div style={{ border: "0px solid red",marginLeft:"20px"}}>
+                    <div style={{ border: "0px solid red", marginLeft: "20px" }}>
                         Vibe Tunes
                     </div>
 
@@ -34,7 +34,7 @@ const Header = () => {
 
             {/*  space */}
             <div style={{ display: 'flex', flexDirection: "row" }}>
-                <div className='second'>
+                <div className='second' style={{ border: "0px solid red", height: "auto",background:"rgb(28,27,27)" }}>
                     <div className='search'>
 
                         <div className='icon'></div>
@@ -63,20 +63,20 @@ const Header = () => {
 
                 <div className='fifth'>
 
-                {/*   <div style={{ cursor: "pointer" }} onClick={displaydown}>
+                    {/*   <div style={{ cursor: "pointer" }} onClick={displaydown}>
 
                         <i class="fa fa-bars"></i>
                     </div>  */}
 
-                  
+
 
                     <div className="dropdown">
                         <button className="dropbtn"> <i className="fa fa-bars"></i></button>
                         <div className="dropdown-content">
-                            <a href="#"><i class="fa fa-download"></i>   &nbsp;Download App</a>
-                            <a href="#"><i class="fa fa-language"></i>  &nbsp;Select Language</a>
-                            <a href="#"><i class="fa fa-language"></i>  &nbsp;Sound Quantity</a>
-                            <a href="#"><i class="fa fa-language"></i> Podcast</a>
+                            <a href="#"><i className="fa fa-download"></i>   &nbsp;Download App</a>
+                            <a href="#"><i className="fa fa-language"></i>  &nbsp;Select Language</a>
+                            <a href="#"><i className="fa fa-language"></i>  &nbsp;Sound Quantity</a>
+                            <a href="#"><i className="fa fa-language"></i> Podcast</a>
                         </div>
                     </div>
 

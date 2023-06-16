@@ -7,15 +7,22 @@ import Navbar from "./components/Navbar";
 import Mainroutes from "./routes/Mainroutes";
 
 
-import Header from "./components/Header";
-import Navbarlinetwo from "./components/Navbarlinetwo";
+
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
 
     <div className="App">
-      // <Navbar />
-      <Mainroutes />
+      {/*    <Header/>
+
+      <Navbarlinetwo/> */}
+    
+      <Mainroutes/>
+
+      <Footer/>
+
+   
 
     </div>
   );

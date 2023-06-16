@@ -1,0 +1,26 @@
+@media (min-width:0px) and (max-width: 700px) {
+    .hide123{
+        display: none;
+    }
+    .footerpart>div:nth-child(3) {
+        display: none;
+     }
+
+     .footerpart>div:nth-child(4) {
+        display: none;
+     }
+     .last>div:nth-child(1)>h1:nth-child(2){
+        display: none;
+
+     }
+     .last>div:nth-child(1)>h1:nth-child(1){
+        display: none;
+
+     }
+     .last>div:nth-child(1)>h1:nth-child(3){
+        display: none;
+
+     }
+}
+
+
