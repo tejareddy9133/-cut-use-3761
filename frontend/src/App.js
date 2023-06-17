@@ -7,17 +7,13 @@ import Mainroutes from "./routes/Mainroutes";
 
 import { Footer } from "./components/Footer";
 import { Spotify } from "./pages/Spotify";
-import Songitem from "./components/Songitem";
-import Playlist from "./pages/Playlist";
 
 function App() {
   return (
     <div className="App">
-      <Playlist />
-      <Songitem />
-      {/* <Mainroutes/>
+      <Mainroutes />
 
-      <Footer/> */}
+      <Footer />
     </div>
   );
 }
