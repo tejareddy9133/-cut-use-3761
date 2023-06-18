@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import "../css/Header.css"
 import logo from "../data/images/Navbar/logo.jpg";
+import { useSelector } from 'react-redux';
+import {useNavigate, Link} from "react-router-dom";
 
 const Header = () => {
     const [style, setstyle] = useState("cont123");
@@ -8,6 +10,14 @@ const Header = () => {
     const search = document.querySelector(".search");
     const displaydown = () => {
         setstyle("open123")
+    }
+    const { auth } = useSelector((store) => store.authReducer);
+    console.log("authh", auth)
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        navigate("/login");
     }
 
 
@@ -50,17 +60,33 @@ const Header = () => {
 
                     Manage Subscription
 
-                </div>
+                </div>{auth===false &&
                 <div className='fourth'>
+                    
 
-                    <i style={{ fontSize: "20px" }} className="fa fa-user"></i>
-                    &nbsp;
+<Link  to="/login"><i style={{ fontSize: "20px", cursor:"pointer" }} className="fa fa-user" ></i></Link> 
+&nbsp;
 
 
-                    Login
+Login
+                    
+</div>}
 
-                </div>
+{auth===true &&
+<div className='fourth'>
+                    
 
+<i style={{ fontSize: "20px", cursor:"pointer" }} className="fa fa-user" onClick={handleLogout}></i>
+&nbsp;
+
+
+Logout
+                    
+</div>}
+
+
+
+                   
                 <div className='fifth'>
 
                     {/*   <div style={{ cursor: "pointer" }} onClick={displaydown}>
