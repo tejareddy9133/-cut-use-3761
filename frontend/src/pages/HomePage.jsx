@@ -8,13 +8,13 @@ import Responsive2 from "../components/slider/second";
 import { First } from "../components/slider/first";
 export const HomePage = () => {
   useEffect(() => {
-    console.log(process.env.url);
+    // console.log(process.env.url);
   }, []);
   return (
     <div>
-     <Header/>
-     <Navbarlinetwo/>
-    
+      <Header />
+      <Navbarlinetwo />
+
       <div style={{ backgroundColor: "#0c0f12", color: "white" }}>
         <div className="slider-one">
           <SimpleSlider />
