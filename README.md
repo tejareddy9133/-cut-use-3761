@@ -27,7 +27,7 @@ This is a music website which is made by a group of 4 members in a span of 5 day
 
            
 <h3>Screenshots:</h3>
-<img src="./my-app/src/images/ScreenShot.PNG" alt="screenshot" /> 
+<img src="./frontend/src/image/1.png" alt="screenshot" /> 
 
 <h3>Technologies Used:</h3>
 <ul>
