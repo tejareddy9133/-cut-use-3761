@@ -82,18 +82,6 @@ const Songitem1 = ({ song }) => {
           <button onClick={() => handleDelete(song._id)}>
             <DeleteIcon />
           </button>
-          <button
-            onClick={() => handleAdd(song._id)}
-            style={{
-              backgroundColor: "red",
-              width: "50px",
-              height: "30px",
-              marginTop: "27px",
-              borderRadius: "20%",
-            }}
-          >
-            <h4>Add</h4>
-          </button>
         </div>
       </div>
     </div>
