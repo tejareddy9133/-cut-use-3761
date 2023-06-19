@@ -30,7 +30,7 @@ This is a music website which is made by a group of 4 members in a span of 5 day
 <h1>Laptop Screen</h1>
 <img src="./frontend/src/image/1.png" alt="screenshot" /> 
 <h1>Mobile Screen</h1>
-<img src="./frontend/src/image/2.png" alt="screenshot" /> 
+<img src="./frontend/src/image/2.jpg" alt="screenshot" /> 
 
 <h3>Technologies Used:</h3>
 <ul>
