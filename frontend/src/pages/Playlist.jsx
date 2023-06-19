@@ -1,10 +1,55 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Songitem from "../components/Songitem";
+import axios from "axios";
+import { Music } from "../components/Music";
 
 const Playlist = () => {
+  const [loading, setLoading] = useState(false);
+  const [name, setName] = useState("");
+  const [artist, setArtist] = useState("");
+  const [url, setUrl] = useState("");
+  const [image_url, setImage_url] = useState("");
+  const [data, setData] = useState([]);
+
+  const Submithandler = () => {
+    axios
+      .post(
+        "https://lucky-pumps-deer.cyclic.app/admin/add/allSongs",
+        {
+          name,
+          artist,
+          url,
+          image_url,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      )
+      .then((response) => {
+        alert(response.data.msg);
+        window.location.reload();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    setLoading(true);
+    axios
+      .get("https://lucky-pumps-deer.cyclic.app/allSongs", {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      })
+      .then((res) => {
+        setData(res.data.songs);
+        localStorage.setItem("songs", JSON.stringify(res.data.songs));
+        setLoading(false);
+      });
+  }, []);
   return (
     <div style={{ backgroundColor: "black", color: "white" }}>
-      {/* input section please add here */}
       <div>
         <h1
           style={{
@@ -12,10 +57,10 @@ const Playlist = () => {
             fontFamily: "Roboto, sans-serif",
             lineHeight: "40px",
             letterSpacing: "normal",
-            textAlign: "start",
+            textAlign: "center",
           }}
         >
-          Arijit All The Way
+          Songs List
         </h1>
         <p
           style={{
@@ -25,9 +70,7 @@ const Playlist = () => {
             fontSize: "14px",
             fontFamily: "Roboto, sans-serif",
           }}
-        >
-          By Vibemusic
-        </p>
+        ></p>
         <p
           style={{
             textAlign: "start",
@@ -37,7 +80,30 @@ const Playlist = () => {
             fontFamily: "Roboto, sans-serif",
           }}
         >
-          8.5K Followers • 162 Songs • 43 min 55 sec
+          <div>
+            <h3>Add New Song</h3>
+            <input
+              type="text"
+              placeholder="name"
+              onChange={(e) => setName(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="artist"
+              onChange={(e) => setArtist(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="image_url"
+              onChange={(e) => setImage_url(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="url"
+              onChange={(e) => setUrl(e.target.value)}
+            />
+            <input type="Submit" onClick={() => Submithandler()} />
+          </div>
         </p>
       </div>
       <div
@@ -97,16 +163,30 @@ const Playlist = () => {
           </button>
         </div>
       </div>
-      <div className="somgitems" style={{ marginTop: "50px" }}>
-        <Songitem />
-        <Songitem />
-        <Songitem />
-        <Songitem />
-        <Songitem />
-        <Songitem />
-        <Songitem />
-        <Songitem />
-        <Songitem />
+      {loading ? (
+        <div>Loading...</div>
+      ) : (
+        <div className="somgitems" style={{ marginTop: "50px" }}>
+          {data.length > 0 ? (
+            data.map((e) => {
+              return <Songitem key={e._id} song={e} />;
+            })
+          ) : (
+            <div> No Songs</div>
+          )}
+        </div>
+      )}
+      <div
+        style={{
+          // border: "1px solid red",
+          padding: "0%",
+          margin: "0%",
+          height: "150px",
+          overflow: "hidden",
+          // paddingTop: "-15px",
+        }}
+      >
+        <Music song={data} />
       </div>
     </div>
   );

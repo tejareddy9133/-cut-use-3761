@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const songsShema = mongoose.Schema(
-  { name: String, artist: String, url: String },
+  { title: String, artist: String, url: String, image_url: String },
   { versonKey: false }
 );
 

@@ -4,6 +4,7 @@ import login from "../css/login.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { LoginUser } from "../redux/authReducer/action";
+import axios from "axios";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -18,11 +19,22 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const userData = { email, password };
-    // console.log(userData);
-
-    dispatch(LoginUser(userData)).then(() => {
-      navigate("/");
-    });
+    axios
+      .post(`https://lucky-pumps-deer.cyclic.app/users/login`, userData)
+      .then((res) => {
+        console.log(res.data);
+        localStorage.setItem("token", res.data.token);
+        localStorage.setItem("id", res.data.userId);
+        const token = localStorage.getItem("token");
+        if (token) {
+          dispatch(LoginUser(userData)).then(() => {
+            navigate("/");
+          });
+        } else {
+          alert("Invalid Credentials");
+          navigate("/login");
+        }
+      });
 
     setEmail("");
     setPassword("");
@@ -37,7 +49,7 @@ export default function Login() {
             onSubmit={(e) => handleSubmit(e)}
           >
             <h1>Login to Your Account</h1>
-            {auth ? "Login Successful ✌️" : "Login Unsuccessful"}
+            {auth ? "Login Successful ✌️" : ""}
             <input
               type="email"
               placeholder="Email"
@@ -56,7 +68,7 @@ export default function Login() {
             />
 
             <button type="submit" className={login.green_btn}>
-              Sing In
+              Sign In
             </button>
           </form>
         </div>
@@ -64,7 +76,7 @@ export default function Login() {
           <h1>New Here ?</h1>
           <Link to="/signup">
             <button type="button" className={login.white_btn}>
-              Sing Up
+              Sign Up
             </button>
           </Link>
         </div>

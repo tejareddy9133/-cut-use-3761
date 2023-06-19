@@ -6,16 +6,22 @@ import Navbarlinetwo from "../components/Navbarlinetwo";
 import SimpleSlider from "../components/slider/top";
 import Responsive2 from "../components/slider/second";
 import { First } from "../components/slider/first";
+import { useNavigate } from "react-router-dom";
 export const HomePage = () => {
-  useEffect(() => {
-    // console.log(process.env.url);
-  }, []);
+  const navigate = useNavigate();
   return (
     <div>
       <Header />
       <Navbarlinetwo />
 
-      <div style={{ backgroundColor: "#0c0f12", color: "white" }}>
+      <div
+        style={{
+          backgroundColor: "#0c0f12",
+          color: "white",
+          border: "1px solid white",
+        }}
+        onClick={() => navigate("/playlist")}
+      >
         <div className="slider-one">
           <SimpleSlider />
         </div>

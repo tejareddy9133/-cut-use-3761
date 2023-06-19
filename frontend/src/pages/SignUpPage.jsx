@@ -20,10 +20,20 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = `http://localhost:8080/users/register`;
-      const { data: res } = await axios.post(url, data);
-      navigate("/login");
-      console.log(res.message);
+      const url = `https://lucky-pumps-deer.cyclic.app/users/register`;
+
+      axios
+        .post(
+          `
+https://lucky-pumps-deer.cyclic.app/users/register`,
+          data
+        )
+        .then((res) => {
+          console.log(res.data.msg);
+          console.log(data);
+          navigate("/login");
+          alert(res.data.msg);
+        });
     } catch (error) {
       if (
         error.response &&
@@ -42,7 +52,7 @@ const Signup = () => {
           <h1>Welcome Back</h1>
           <Link to="/login">
             <button type="button" className={signup.white_btn}>
-              Sing in
+              Sign in
             </button>
           </Link>
         </div>
@@ -87,7 +97,7 @@ const Signup = () => {
             />
             {error && <div className={signup.error_msg}>{error}</div>}
             <button type="submit" className={signup.green_btn}>
-              Sing Up
+              Sign Up
             </button>
           </form>
         </div>

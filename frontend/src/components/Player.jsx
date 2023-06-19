@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 // import "./player.scss";
 import "../css/musicplayer.css";
 import "./player.css";
@@ -19,7 +19,9 @@ const Player = ({
   songs,
 }) => {
   const clickRef = useRef();
-
+  useEffect(() => {
+    console.log(currentSong);
+  });
   const PlayPause = () => {
     setisplaying(!isplaying);
   };
@@ -28,13 +30,13 @@ const Player = ({
     const width = clickRef.current.clientWidth;
     const offset = e.nativeEvent.offsetX;
     const clickPosition = (offset / width) * 100;
-    const newProgress = (clickPosition / 100) * currentSong.duration;
+    const newProgress = (clickPosition / 100) * currentSong?.duration;
 
     // setProgress(newProgress);
   };
 
   const skipBack = () => {
-    const index = songs.findIndex((x) => x.title == currentSong.title);
+    const index = songs.findIndex((x) => x?.name == currentSong?.name);
     if (index == 0) {
       setCurrentSong(songs[songs.length - 1]);
     } else {
@@ -44,7 +46,7 @@ const Player = ({
   };
 
   const skiptoNext = () => {
-    const index = songs.findIndex((x) => x.title == currentSong.title);
+    const index = songs.findIndex((x) => x?.name == currentSong?.name);
 
     if (index == songs.length - 1) {
       setCurrentSong(songs[0]);
@@ -81,7 +83,7 @@ const Player = ({
               alt="image"
               style={{ width: "100px", height: "100px" }}
             />
-            <h5>{currentSong.title}</h5>
+            <h5>{currentSong?.name}</h5>
           </div>
           <div
             className="controls"
@@ -119,11 +121,11 @@ const Player = ({
               ref={clickRef}
               //   style={{ border: "1px solid red" }}
             >
-              <h1>artist Name</h1>
+              <h1>{currentSong?.artist}</h1>
               <div
                 className="seek_bar"
                 style={{
-                  width: `${currentSong.progress + "%"}`,
+                  width: `${currentSong?.progress + "%"}`,
                   border: "1px solid red",
                 }}
               ></div>

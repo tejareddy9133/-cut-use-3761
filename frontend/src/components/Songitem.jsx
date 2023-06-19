@@ -1,8 +1,34 @@
 import React from "react";
 import { Box, Heading } from "@chakra-ui/react";
 import { DeleteIcon } from "@chakra-ui/icons";
+import axios from "axios";
 
-const Songitem = () => {
+const Songitem = ({ song }) => {
+  const handleDelete = (id) => {
+    console.log(id);
+    axios
+      .delete(`https://lucky-pumps-deer.cyclic.app/admin/allSongs/${id}`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      })
+      .then((res) => {
+        alert(res.data);
+        window.location.reload();
+      });
+  };
+
+  const handleAdd = (id) => {
+    console.log(id);
+    axios
+      .post(`https://lucky-pumps-deer.cyclic.app/add/song/playlist/${id}`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      })
+      .then((res) => {
+        console.log(res);
+        alert(res.data);
+      });
+  };
   return (
     <div>
       <div
@@ -24,8 +50,8 @@ const Songitem = () => {
           }}
         >
           <img
-            src="https://img.wynk.in/unsafe/248x248/filters:no_upscale():strip_exif():format(webp)/http://s3.ap-south-1.amazonaws.com/wynk-music-cms/srch_saregama/20230614165945000/8907212007012/1686816917782/resources/8907212007012.jpg"
-            alt=""
+            src={song.image_url}
+            alt={song.artist}
             style={{ height: "100%", width: "10%" }}
           />
           <p
@@ -35,7 +61,7 @@ const Songitem = () => {
               fontStretch: "extra-expanded",
             }}
           >
-            Zara In love with React & Next <br />{" "}
+            {song.name}{" "}
             <span>
               <p
                 style={{
@@ -47,16 +73,17 @@ const Songitem = () => {
                   marginTop: "10px",
                 }}
               >
-                ArjithSing
+                {song.artist}
               </p>
             </span>
           </p>
         </div>
         <div style={{ color: "white", display: "flex", gap: "40px" }}>
-          <button style={{}}>
+          <button onClick={() => handleDelete(song._id)}>
             <DeleteIcon />
           </button>
           <button
+            onClick={() => handleAdd(song._id)}
             style={{
               backgroundColor: "red",
               width: "50px",
@@ -65,7 +92,7 @@ const Songitem = () => {
               borderRadius: "20%",
             }}
           >
-            <h4>play</h4>
+            <h4>Add</h4>
           </button>
         </div>
       </div>
