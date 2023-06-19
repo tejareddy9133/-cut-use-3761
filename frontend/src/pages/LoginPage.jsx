@@ -15,7 +15,26 @@ export default function Login() {
   const dispatch = useDispatch();
   const { auth, token } = useSelector((store) => store.authReducer);
   console.log("auth", auth, token);
-
+  const songsData = [
+    {
+      _id: "648f25510c257110f5001f58",
+      name: "Saas 2",
+      artist: "sanky",
+      url: "https://pagalworldl.com/files/download/id/1847",
+      __v: 0,
+      image_url:
+        "https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+    {
+      _id: "648f258d0c257110f5001f59",
+      name: "Kill Bande",
+      artist: "Ravi",
+      url: "https://pagalworldl.com/files/download/id/20575",
+      __v: 0,
+      image_url:
+        "https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+  ];
   const handleSubmit = (e) => {
     e.preventDefault();
     const userData = { email, password };
@@ -25,6 +44,7 @@ export default function Login() {
         console.log(res.data);
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("id", res.data.userId);
+        localStorage.setItem("songs", JSON.stringify(songsData));
         const token = localStorage.getItem("token");
         if (token) {
           dispatch(LoginUser(userData)).then(() => {
