@@ -3,7 +3,7 @@ import Player from "./Player";
 import { songsdata } from "./audio";
 import axios from "axios";
 export const Music = () => {
-  const song =JSON.parse( localStorage.getItem("songs"));
+  const song = JSON.parse(localStorage.getItem("songs"));
   const [songs, setSongs] = useState({ song });
   const [isplaying, setisplaying] = useState(false);
   const [currentSong, setCurrentSong] = useState(song[1]);
