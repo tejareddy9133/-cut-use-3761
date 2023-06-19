@@ -11,7 +11,7 @@ const Header = () => {
     const displaydown = () => {
         setstyle("open123")
     }
-    const { auth } = useSelector((store) => store.authReducer);
+    const { auth, token } = useSelector((store) => store.authReducer);
     console.log("authh", auth)
     const navigate = useNavigate();
 
@@ -76,7 +76,7 @@ Login
 <div className='fourth'>
                     
 
-<i style={{ fontSize: "20px", cursor:"pointer" }} className="fa fa-user" onClick={handleLogout}></i>
+<i style={{ fontSize: "20px", cursor:"pointer" }} className="fa fa-user" onClick={()=>handleLogout()}></i>
 &nbsp;
 
 

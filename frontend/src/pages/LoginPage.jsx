@@ -69,7 +69,7 @@ export default function Login() {
             onSubmit={(e) => handleSubmit(e)}
           >
             <h1>Login to Your Account</h1>
-            {auth ? "Login Successful ✌️" : ""}
+
             <input
               type="email"
               placeholder="Email"
