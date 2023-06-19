@@ -18,7 +18,7 @@ export const HomePage = () => {
         style={{
           backgroundColor: "#0c0f12",
           color: "white",
-          border: "1px solid white",
+          // border: "1px solid white",
         }}
         onClick={() => navigate("/playlist")}
       >
