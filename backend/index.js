@@ -8,8 +8,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+
 app.use("/users", authRouter);
 app.use("/songs", userRouter);
+
 
 app.listen(8080, async () => {
   try {
