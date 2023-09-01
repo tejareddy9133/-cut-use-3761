@@ -8,8 +8,8 @@ app.use(express.json());
 app.use(cors());
 app.use(userRouter);
 
-app.use("/users", userRouter);
-
+// app.use("/users", userRouter);
+app.use("/songs", userRouter);
 app.listen(8080, async () => {
   try {
     await connection;

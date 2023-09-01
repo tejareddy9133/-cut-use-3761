@@ -17,8 +17,12 @@ const userRouter = Router();
 
 userRouter.post("/register", async (req, res) => {
   try {
-    const { name, username, email, password } = req.body;
-
+    let { name, username, email, password } = req.body;
+    let admin = false;
+    email = email.split("@");
+    if (email[1] == "vibe.com") {
+      admin = true;
+    }
     const user = await User.findOne({ email });
     if (user) {
       return res.status(200).json({ msg: "User already exists" });
@@ -27,13 +31,13 @@ userRouter.post("/register", async (req, res) => {
         const newUser = new User({
           name,
           username,
-          email,
+          email: email.join("@"),
           password: hash,
-          isAdmin: false,
+          isAdmin: admin,
           isSub: false,
         });
         await newUser.save();
-        res.status(200).json({ msg: "User created successfully" });
+        res.status(200).json({ msg: "User created successfully", newUser });
       });
     }
   } catch (error) {
